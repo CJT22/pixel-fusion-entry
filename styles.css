@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Kanit", sans-serif;
+    font-style: normal;
+    background-color: #F5F5F5;
+    color: #121212;
+}
+
+/* Nav Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 0 30px;
+    background-color: #121212;
+    color: #F5F5F5;
+}
+
+nav > h2 {
+    font-size: 1.75rem;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+li:not(:first-child) {
+    margin-left: 50px;
+}
+
+li > a {
+    color: #FFFAFA;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+li > a:hover {
+    background-color: #F5F5F5;
+    color: #121212;
+}
+
+/* General Stylings */
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4, p {
+    font-size: 1.25rem;
+}
+
+/* Hero */
+#hero {
+    height: 90vh;
+    background-image: url(./img/background_mario.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFFAFA;
+}
+
+@keyframes shadows {
+    0% {
+        text-shadow: 5px 5px #121212;
+    }
+
+    25% {
+        text-shadow: -5px 5px #121212;
+    }
+
+    50% {
+        text-shadow: -5px -5px #121212;
+    }
+
+    75% {
+        text-shadow: 5px -5px #121212;
+    }
+
+    100% {
+        text-shadow: 5px 5px #121212;
+    }
+}
+
+#hero-text {
+    text-shadow: 5px 5px #121212;
+    animation-name: shadows;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+#hero-text > h1 {
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+/* Highlighted Game and Character*/
+#highlighted {
+    background-color: #FFFAFA;
+    padding: 30px;
+}
+
+.highlight-content {
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    margin-top: 30px;
+    border: solid 3px #121212;
+    border-radius: 30px;
+    background-color: #FFFFF0;
+    transition: 0.3s;
+}
+
+.highlight-content:hover {
+    transform: scale(1.1);
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.highlight-content:active {
+    transform: scale(1);
+    transform: translate(10px, 10px);
+    box-shadow: 0px 0px;
+}
+
+@keyframes jump {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, -20px);
+    }
+
+    100% {
+        transform: translate(0, 0)
+    }
+}
+
+@keyframes sideways {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-20px, 0);
+    }
+
+    100% {
+        transform: translate(0, 0)
+    }
+}
+
+.highlight-content > img {
+    max-width: 35%;
+    padding: 20px;
+}
+
+#mario-jumping {
+    animation-name: jump;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+#mario {
+    animation-name: sideways;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+.highlight-text {
+    margin: 0 50px;
+}
+
+/* Gallery */
+#gallery {
+    padding: 30px;
+}
+
+#collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border: solid 3px #121212;
+    border-radius: 30px;
+    background-color: #FFFFF0;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.game:hover {
+    transform: scale(1.1);
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.game:active {
+    transform: scale(1);
+    transform: translate(10px, 10px);
+    box-shadow: 0px 0px;
+}
+
+.game > img {
+    width: 200px;
+}
+
+.game > h3 {
+    margin-top: 30px;
+}
+
+/* Top 5 */
+#top-5 {
+    padding: 30px;
+    background-color: #FFFAFA;
+}
+
+.top-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: justify;
+    margin-top: 30px;
+    border: solid 3px #121212;
+    border-radius: 30px;
+    background-color: #FFFFF0;
+    transition: 0.3s;
+}
+
+.top-content:hover {
+    transform: scale(1.1);
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.top-content:active {
+    transform: scale(1);
+    transform: translate(10px, 10px);
+    box-shadow: 0px 0px;
+}
+
+@keyframes motions {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(20px, 0);
+    }
+
+    50% {
+        transform: translate(0, 0);
+    }
+
+    75% {
+        transform: translate(-20px, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.top-content > img {
+    max-width: 35%;
+    padding: 50px;
+    animation-name: motions;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.top-text {
+    margin: 0 50px;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 0 30px;
+    background-color: #121212;
+    color: #F5F5F5;
+}
+
+footer > h2 {
+    font-size: 1.75rem;
+}
+
+footer > a {
+    color: #F5F5F5;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+footer > a:hover {
+    background-color: #F5F5F5;
+    color: #121212;
+}
